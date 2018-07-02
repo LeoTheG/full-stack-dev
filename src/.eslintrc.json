@@ -1,0 +1,19 @@
+{
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": "off",
+    "comma-dangle": "off",
+    "react/jsx-filename-extension": "off"
+  }
+}
+
+/* 
+
+airbnb style guide
+env browser & node b/c writing browser and server side code
+
+*/

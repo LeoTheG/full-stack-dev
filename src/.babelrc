@@ -1,0 +1,6 @@
+{
+    "presets":["env","react"]
+    // presets := set of plugins defined by babel
+    // env allows use of babel-preset-es2015->2018 transforms to ES6
+    // react transforms JSX syntax to javascript
+}
