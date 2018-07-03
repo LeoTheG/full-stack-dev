@@ -67,9 +67,9 @@ MongoClient.connect("mongodb://localhost:27017/somecol",{useNewUrlParser:true}, 
     }
 })
 
-const port = 8080
+const port = 8081
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'..','public')));
 app.get("/test",(req,res)=>{
     res.sendFile(path.join(__dirname, '..', 'public','test.html'));
 });

@@ -27,7 +27,7 @@ module.exports = {
     port: 3000,
     open: true,
     proxy: {
-      "test": "http://[::1]:8081",
+      "**": "http://[::1]:8081",
       secure: false,
       changeOrigin: true
     },

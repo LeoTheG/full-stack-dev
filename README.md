@@ -9,10 +9,11 @@ Using nodejs,express,webpack,babel
 - babel: transform code to make compilable
 - webpack: module bundler for usage in browser
 - webpack dev server: development server with live reloading for client-side code
-- nodemon: monitors for changes in server source code & automatically restarts
+- nodemon: monitors changes in server source code & automatically restarts
+- mongodb: database
 
 From tutorial https://hackernoon.com/full-stack-web-application-using-react-node-js-express-and-webpack-97dbd5b9d708
 
 ## Currently
 
-Webpack dev server listens on port 3000 and proxies the 'test' page from express (on port 8081).
+Webpack dev server listens on port 3000 and proxies the 'test' page from express (on port 8081). MongoDB + express backend filled with random data filled with random data.
