@@ -1,17 +1,25 @@
 import ReactDOM from 'react-dom';
-import React from 'react';
+import {Redirect} from 'react-router-dom'
+import React, {Component} from 'react';
+import {Route, Switch,BrowserRouter as Router} from 'react-router-dom';
+import Special from '../components/Special.js';
+import LandingPage from '../components/LandingPage';
+import LoginForm from '../components/LoginForm.js';
+import PrivateRoute from '../components/PrivateRoute.js';
 
-import LoginForm from '../components/LoginForm';
 
-class App extends React.Component{
-
+class App extends Component{
     render(){
         return(
             <div>
-                <LoginForm />
+                <Switch>
+                    <Route exact path="/foo" component={Special}/>
+                    <PrivateRoute path="/bar" component={Special} />
+                    <Route exact path="/" component={LandingPage}/>
+                </Switch>
             </div>
-              )
+          );
     }
 }
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(<Router><App/></Router>,document.getElementById('root'));

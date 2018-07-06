@@ -6,7 +6,8 @@ module.exports = {
   entry: "./public/index.js",
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -27,15 +28,17 @@ module.exports = {
     port: 3000,
     open: true,
     proxy: {
-      "**": "http://[::1]:8081",
+      "/test": "http://[::1]:8081",
+      "/api/*": "http://[::1]:8081",
       secure: false,
       changeOrigin: true
     },
+    historyApiFallback: true,
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     })
-  ]
+  ],
 };

@@ -1,19 +1,30 @@
 # Full-Stack Development
 
-Using nodejs,express,webpack,babel
+Aim to create a site with user registration, authentication, api, and front-end displaying data through api calls. Current plan is employee management site where managers & employees can log in for scheduling and other uses.
 
 ## Parts
 
-- nodejs: server
-- express: server
+### Back-end
+- nodejs
+- express
+- mongodb
+### Front-end
+- react
+
+### Other stuff
 - babel: transform code to make compilable
 - webpack: module bundler for usage in browser
 - webpack dev server: development server with live reloading for client-side code
 - nodemon: monitors changes in server source code & automatically restarts
-- mongodb: database
+- react router for front-end routing, express for server side (like api)
 
-From tutorial https://hackernoon.com/full-stack-web-application-using-react-node-js-express-and-webpack-97dbd5b9d708
+Initial core from tutorial https://hackernoon.com/full-stack-web-application-using-react-node-js-express-and-webpack-97dbd5b9d708
 
 ## Currently
 
-Webpack dev server listens on port 3000 and proxies the 'test' page from express (on port 8081). MongoDB + express backend filled with random data filled with random data.
+Webpack dev server listens on port 3000 and proxies  page from express (on port 8081). MongoDB + express backend filled with random data filled with random data.
+
+## TODO
+
+- create subdomains for api using vhost
+- authenticate site (user login, registration)

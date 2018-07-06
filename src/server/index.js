@@ -25,8 +25,8 @@ const authCheck = jwt({
         jwksRequestsPerMinute: 5,
         jwksUri:''
     }),
-    audience:'',
-    issuer:'',
+    audience:'5b3fa4912b65841a5bd40ea1',
+    issuer:'workplacemanagement.auth0.com',
     algorithms:['RS256']
 })
 
@@ -49,6 +49,7 @@ function listCollections(db){
         console.log(res);
     })
 }
+// deletes all collections of given db
 function removeAllCollections(db){
     db.listCollections().toArray((err,res)=>{
         if(err) throw err;
@@ -97,17 +98,17 @@ function getWorkers(res){
     })
 }
 
-
 app.use(express.static(path.join(__dirname,'..','public')));
 
-// test page for webdev server proxy
-app.get("/test",(req,res)=>{
-    res.sendFile(path.join(__dirname, '..', 'public','test.html'));
-});
-
 // api endpoint
-app.get('/api/workers', (req,res)=>{
+app.get('/api/workers', authCheck, (req,res)=>{
     getWorkers(res);
+})
+// let react router handle other routing
+app.get('/*', (req,res)=>{
+           res.sendFile(path.join(__dirname,'..','public','index.html'),(err)=>{
+               if(err) res.status(500).send(err);
+           });
 })
 
 app.listen(port, () => console.log("Listening on port %s!",port));
