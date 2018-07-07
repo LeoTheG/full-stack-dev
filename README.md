@@ -8,6 +8,7 @@ Aim to create a site with user registration, authentication, api, and front-end 
 - nodejs
 - express
 - mongodb
+- auth0
 ### Front-end
 - react
 
@@ -22,7 +23,7 @@ Initial core from tutorial https://hackernoon.com/full-stack-web-application-usi
 
 ## Currently
 
-Webpack dev server listens on port 3000 and proxies  page from express (on port 8081). MongoDB + express backend filled with random data filled with random data.
+Webpack dev server listens on port 3000 and proxies  page from express (on port 8081). MongoDB + express backend filled with random data filled with random data. Uses auth0 for authentication.
 
 ## TODO
 

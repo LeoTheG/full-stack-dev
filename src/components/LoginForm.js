@@ -1,5 +1,4 @@
 import React from 'react';
-import { login } from '../client/AuthService';
 
 class LoginForm extends React.Component {
     render() {

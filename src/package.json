@@ -2,7 +2,7 @@
     "name": "FullStackProject",
     "scripts": {
         "client": "webpack-dev-server --mode development --devtool inline-source-map --hot --display=minimal",
-        "server": "nodemon server/index.js",
+        "server": "nodemon server/server.js",
         "dev": "concurrently \"npm run server\" \"npm run client\""
     },
     "dependencies": {

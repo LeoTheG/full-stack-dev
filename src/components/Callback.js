@@ -1,19 +1,30 @@
 import React from 'react';
-import {setIdToken, setAccessToken} from '../client/AuthService';
+//import { setIdToken, setAccessToken } from '../client/AuthService';
+import Auth from '../client/Auth';
+
+const auth = new Auth();
 
 class Callback extends React.Component {
-    constructor(){
+    constructor() {
+        console.log("callback called");
         super();
     }
-    componentDidMount(){
-        setAccessToken();
-        setIdToken();
-        window.location.href='/';
+    componentDidMount() {
+        console.log("mounted callback component");
+        auth.handleAuthentication();
     }
 
-    render(){
-        return null;
+    render() {
+        const style = {
+            textAlign: 'center'
+        };
+        return (
+            <div style={style}>
+                <h1>Loading</h1>
+            </div>
+        )
     }
+
 }
 
 export default Callback;
