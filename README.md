@@ -11,6 +11,7 @@ Aim to create a site with user registration, authentication, api, and front-end 
 - auth0
 ### Front-end
 - react
+- bootstrap (styling)
 
 ### Other stuff
 - babel: transform code to make compilable
@@ -28,4 +29,4 @@ Webpack dev server listens on port 3000 and proxies  page from express (on port 
 ## TODO
 
 - create subdomains for api using vhost
-- authenticate site (user login, registration)
+- change navbar links

@@ -7,11 +7,10 @@ let auth = new Auth();
 export default class LandingPage extends React.Component {
     render(){
         if(!auth.isAuthenticated()){
-            console.log("not authenticated");
             return (
                 <div>
                     <h1 className="welcomeHeader">Please log in</h1>
-                    <div className="row align-items-center justify-content-center">
+                    <div className="text-center">
                         <button type="submit" className="btn btn-primary" onClick={()=>auth.login()}>Log In</button>
                     </div>
                 </div>

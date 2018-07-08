@@ -9,6 +9,7 @@ import PrivateRoute from '../components/PrivateRoute.js';
 import Callback from '../components/Callback.js';
 import Auth from '../client/Auth';
 import history from '../client/History';
+import Menu from '../components/Menu';
 
 const auth = new Auth();
 
@@ -18,6 +19,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <Menu />
                 <Switch>
                     <Route exact path="/foo" render={() => (auth.isAuthenticated() ? (<div>User authenticated</div>) : (<div>Not authenticated</div>))} />
                     <Route exact path="/callback" component={Callback} />

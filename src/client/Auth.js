@@ -18,15 +18,16 @@ export default class Auth {
         this.isAuthenticated = this.isAuthenticated.bind(this);
     }
     login() {
+        /*
         this.auth.authorize({},(err,authResult)=>{
             console.log("authorized");
         });
+        */
+       this.auth.authorize();
     }
 
     handleAuthentication() {
         this.auth.parseHash((err, authResult) => {
-            console.log("logging auth result");
-            console.log(authResult);
             if (authResult && authResult.accessToken && authResult.idToken) {
                 this.setSession(authResult);
                 history.replace('/');
@@ -42,7 +43,6 @@ export default class Auth {
         let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
         localStorage.setItem('access_token', authResult.accessToken);
         localStorage.setItem('id_token', authResult.idToken);
-        console.log("setting expires_at to %s", expiresAt);
         localStorage.setItem('expires_at', expiresAt);
         history.replace('/');
     }
