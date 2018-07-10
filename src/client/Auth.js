@@ -1,31 +1,28 @@
 import auth0 from 'auth0-js';
 import history from '../client/History';
 
+/*
+    Handles authentication by delegating to auth0
+*/
 export default class Auth {
     constructor() {
-
         this.auth = new auth0.WebAuth({
             domain: 'workplacemanagement.auth0.com',
             clientID: 'C-jriIsfTLdp1fS_1jDNPeQn9PFczUkY',
             redirectUri: 'http://localhost:3000/callback',
             audience: 'https://workplacemanagement.auth0.com/userinfo',
             responseType: 'token id_token',
-            scope: 'openid'
+            scope: 'openid profile email read:users user_id id'
         });
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
         this.isAuthenticated = this.isAuthenticated.bind(this);
+
     }
     login() {
-        /*
-        this.auth.authorize({},(err,authResult)=>{
-            console.log("authorized");
-        });
-        */
-       this.auth.authorize();
+        this.auth.authorize();
     }
-
     handleAuthentication() {
         this.auth.parseHash((err, authResult) => {
             if (authResult && authResult.accessToken && authResult.idToken) {
